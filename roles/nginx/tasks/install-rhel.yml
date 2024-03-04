@@ -1,0 +1,16 @@
+---
+- name: "Install nginx"
+  yum:
+    name: nginx {{ nginx_version }}
+    state: present
+    update_cache: true
+
+
+- name: permit https/http
+  firewalld:
+    service: 
+      - https
+      - http
+    permanent: true
+    state: enabled
+  notify: Reload firewalld

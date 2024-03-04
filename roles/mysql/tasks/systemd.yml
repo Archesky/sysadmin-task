@@ -1,0 +1,14 @@
+---
+- name: Systemd mysql is running
+  systemd_service:
+    state: started
+    name: mysqld
+
+- name: Enable mysql and ensure it is not masked
+  systemd_service:
+    name: mysqld
+    enabled: true
+    masked: no
+
+
+    

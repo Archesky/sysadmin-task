@@ -1,0 +1,10 @@
+- name: Systemd nginx is running
+  systemd_service:
+    state: started
+    name: nginx
+
+- name: Enable nginx and ensure it is not masked
+  systemd_service:
+    name: nginx
+    enabled: true
+    masked: no

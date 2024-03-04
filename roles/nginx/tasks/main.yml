@@ -1,2 +1,21 @@
 ---
-# tasks file for nginx
+- name: Dependencies
+  include_tasks: ./dependencies.yml"
+
+- name: "Install nginx Debian-based"
+  include_tasks: "./install-debian.yml"
+  when: ansible_facts['os_family'] == 'Debian'
+
+- name: "Install nginx RHEL-based"
+  include_tasks: "./install-rhel.yml"
+  when: ansible_facts['os_family'] == 'RedHat'
+
+- name: Enable service in systemd
+  include_tasks: "./systemd.yml"
+  when:
+    - ansible_facts['service_mgr'] == 'systemd'
+
+- name: Start nginx, if not started
+  service:
+    name: nginx
+    state: started

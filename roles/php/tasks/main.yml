@@ -1,2 +1,8 @@
 ---
 # tasks file for php
+- name: Ensure PHP packages are installed.
+  package:
+    name: 
+      - php-fpm
+      - php-mysql
+    state: present
