@@ -1,16 +1,16 @@
 ---
 # handlers file for nginx
-    - name: Reload Nginx
-      service:
-        name: nginx
-        state: reloaded
+- name: Reload Nginx
+  service:
+    name: nginx
+    state: reloaded
 
-    - name: Restart Nginx
-      service:
-        name: nginx
-        state: restarted
-       
-    - name: Reload firewalld
-      service:
-        name: firewalld
-        state: reloaded
+- name: Restart Nginx
+  service:
+    name: nginx
+    state: restarted
+
+- name: Reload firewalld
+  service:
+    name: firewalld
+    state: reloaded

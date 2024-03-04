@@ -17,4 +17,3 @@
   service:
     name: mysqld
     state: started
-

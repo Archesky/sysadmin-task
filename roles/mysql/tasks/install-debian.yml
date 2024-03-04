@@ -1,9 +1,8 @@
 ---
 - name: Install Mysql
   apt:
-    name: 
+    name:
       - mysql-common
       - mysql-server
     update_cache: yes
     stete: present
-

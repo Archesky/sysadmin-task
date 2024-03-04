@@ -5,10 +5,9 @@
     state: present
     update_cache: true
 
-
 - name: permit https/http
   firewalld:
-    service: 
+    service:
       - https
       - http
     permanent: true

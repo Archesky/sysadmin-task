@@ -9,6 +9,3 @@
     name: mysqld
     enabled: true
     masked: no
-
-
-    

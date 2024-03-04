@@ -10,14 +10,12 @@
     state: present
 
 - name: install MySQL
-  yum: 
+  yum:
     name: mysql-server
     state: present
 
 - name: run MySQL
-  service: 
+  service:
     name: mysqld
     state: started
     enabled: yes
-
-

@@ -1,7 +1,6 @@
 ---
 - name: Test PING.
   hosts: all
-  become: yes
   ping:
 
 - name: "LEMP Provisioning"
