@@ -1,0 +1,16 @@
+---
+- name: Test PING.
+  hosts: all
+  become: yes
+  ping:
+
+- name: "LEMP Provisioning"
+  become: true
+  roles:
+    - nginx
+    - mysql
+    - php
+
+- name: Check if it's working
+  ansible.builtin.uri:
+    url: http://localhost:80
